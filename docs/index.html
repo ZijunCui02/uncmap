@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-auto">
+<head>
+<meta charset="UTF-8">
+<title>UNCmap — Housing finder for UNC Chapel Hill</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="An interactive map for finding the ideal off-campus rental near UNC Chapel Hill: commute destination, groceries, dining, parks, student neighborhoods, and bus lines.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234B9CD3' d='M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z'/%3E%3C/svg%3E">
+<script>
+(function () {
+  var s = localStorage.getItem("color-scheme") || "auto";
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var useDark = s === "dark" || (s !== "light" && prefersDark);
+  var r = document.documentElement;
+  r.classList.remove("theme-auto","theme-light","theme-dark");
+  r.classList.add("theme-" + s);
+  r.classList.toggle("dark", useDark);
+})();
+</script>
+<link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="./vendor/markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="./vendor/markercluster/MarkerCluster.Default.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./map.css">
+</head>
+<body class="app-body">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 32 32"><path fill="currentColor" d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6M5.394 6.813L6.81 5.399l3.505 3.506L8.9 10.319zM2 15.005h5v2H2zm3.394 10.193L8.9 21.692l1.414 1.414l-3.505 3.506zM15 25.005h2v5h-2zm6.687-1.9l1.414-1.414l3.506 3.506l-1.414 1.414zm3.313-8.1h5v2h-5zm-3.313-6.101l3.506-3.506l1.414 1.414l-3.506 3.506zM15 2.005h2v5h-2z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 32 32"><path fill="currentColor" d="M13.503 5.414a15.076 15.076 0 0 0 11.593 18.194a11.1 11.1 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1 1 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.07 13.07 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3"/></symbol>
+<symbol id="i-auto" viewBox="0 0 24 24"><path fill="currentColor" d="M11 21q-3.35 0-5.675-2.325T3 13q0-1.45.475-2.762T4.8 7.888t2.037-1.725T9.426 5.3q.625-.075.975.438t.025 1.062q-.3.5-.363 1.063T10 9q0 2.5 1.75 4.25T16 15q.3 0 .6-.012t.6-.113q.525-.2.938.188t.237.912q-.725 2.35-2.8 3.688T11 21m5.4-12l-.5 1.4q-.1.275-.325.438t-.5.162q-.475 0-.737-.387t-.113-.813l2.55-7.175q.1-.275.35-.45t.55-.175h.65q.3 0 .55.175t.35.45l2.55 7.175q.15.425-.112.813t-.738.387q-.275 0-.5-.162T20.1 10.4L19.6 9zm.45-1.35h2.3L18 4z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-locate" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></g></symbol>
+</defs>
+</svg>
+
+<header class="nav" id="navbar">
+  <a class="logo" href="./" aria-label="UNCmap home">
+    <span>&gt;_UNCmap</span><span class="blink">_</span>
+  </a>
+  <nav class="nav-links">
+      <a class="nav-item nav-active" href="./">map</a>
+      <a class="nav-item" href="#about" id="about-link">about</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light / dark / auto">
+        <svg class="icon icon-auto" aria-hidden="true"><use href="#i-auto"/></svg>
+        <svg class="icon icon-light" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon-dark" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+  </nav>
+</header>
+
+<main class="map-shell">
+
+  <!-- ===================== CONTROL SIDEBAR ===================== -->
+  <aside class="panel panel--controls" id="controls">
+    <div class="panel__head">
+      <h1 class="panel__title">UNC Housing Map</h1>
+      <button class="icon-btn panel__collapse" id="controls-collapse" aria-label="Collapse panel">
+        <svg class="icon"><use href="#i-close"/></svg>
+      </button>
+    </div>
+
+    <!-- destination callout -->
+    <div class="dest-card" id="dest-card" hidden>
+      <div class="dest-card__tag">commute destination</div>
+      <div class="dest-card__name" id="dest-name">—</div>
+      <div class="dest-card__why" id="dest-why"></div>
+    </div>
+
+    <div class="layers" id="layers"><!-- layer toggles injected by JS --></div>
+
+    <div class="panel__section">
+      <div class="panel__section-head">
+        <div class="panel__section-title">bus lines</div>
+        <button class="mini-btn" id="routes-toggle-all" type="button" aria-pressed="false">select all</button>
+      </div>
+      <div class="routes" id="routes"><!-- route chips injected by JS --></div>
+    </div>
+
+    <div class="panel__foot">
+      <span id="counts">loading…</span>
+    </div>
+  </aside>
+
+  <!-- floating button to reopen the panel on mobile / when collapsed -->
+  <button class="fab fab--menu" id="controls-open" aria-label="Open controls" hidden>
+    <svg class="icon"><use href="#i-menu"/></svg>
+  </button>
+
+  <!-- ===================== MAP ===================== -->
+  <div id="map" class="map-canvas"></div>
+
+  <!-- ===================== DETAIL PANEL ===================== -->
+  <aside class="panel panel--detail" id="detail" hidden>
+    <button class="icon-btn detail__close" id="detail-close" aria-label="Close details">
+      <svg class="icon"><use href="#i-close"/></svg>
+    </button>
+    <div class="detail__body" id="detail-body"></div>
+  </aside>
+
+  <!-- ===================== ABOUT OVERLAY ===================== -->
+  <div class="about-overlay" id="about" hidden>
+    <div class="about-card">
+      <button class="icon-btn about__close" id="about-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button>
+      <h2>About this map</h2>
+      <p>Built to help choose an off-campus rental near <strong>UNC&nbsp;Chapel&nbsp;Hill</strong>.
+         Target: 1b1b / studio, or a shared 2b2b — <strong>in-unit washer &amp; dryer required</strong>,
+         budget ≤ $2,000 / person.</p>
+      <p>The layers are derived from research, not guesses:</p>
+      <ul>
+        <li><strong>Destination</strong> — the UNC Biology teaching/lab building with the most upper-division class hours, from the BIOL curriculum and class schedules.</li>
+        <li><strong>Amenities</strong> — groceries, dining streets, shopping, parks, landmarks.</li>
+        <li><strong>Neighborhoods &amp; listings</strong> — where UNC students cluster, by housing type.</li>
+        <li><strong>Bus lines</strong> — Chapel Hill Transit routes drawn in their official colors.</li>
+      </ul>
+      <p class="about__note">This is step 1 of an ongoing build. Markers, filters, and an exhaustive listing
+         sweep come next.</p>
+    </div>
+  </div>
+
+</main>
+
+<script src="./vendor/leaflet/leaflet.js"></script>
+<script src="./vendor/markercluster/leaflet.markercluster.js"></script>
+<script src="./icons.js"></script>
+<script src="./theme.js"></script>
+<script src="./map.js"></script>
+</body>
+</html>

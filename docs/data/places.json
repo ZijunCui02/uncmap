@@ -1,0 +1,60 @@
+{
+  "destination": {
+    "building": "Wilson Hall",
+    "lat": 35.90789,
+    "lng": -79.05188,
+    "course_count": 18,
+    "reason": "Biology Department's primary teaching & laboratory building. Across the actual Fall 2024 / Spring 2025 class schedules it hosts the most upper-division (300/400-level) BIOL meetings and, decisively, nearly every BIOL teaching lab (252L, 271L, 272L, 278L, 422L, 447L, 451L, 471L, 474L, 475L). Since the standard B.S. plan requires an organismal 400-level course plus four advanced electives with multiple labs, a junior/senior spends more class hours here than anywhere else."
+  },
+  "runner_up_buildings": [
+    { "building": "Genome Sciences Building", "lat": 35.90753, "lng": -79.05082, "course_count": 11 },
+    { "building": "Coker Hall", "lat": 35.90825, "lng": -79.05130, "course_count": 7 }
+  ],
+  "places": [
+    { "name": "Harris Teeter (University Place / Estes Dr)", "category": "supermarket", "note": "Closest full-size grocery to campus, at University Place off S Estes Dr.", "address": "2110 S Estes Dr, Chapel Hill, NC 27514", "lat": 35.92944, "lng": -79.02632, "approx": false },
+    { "name": "Harris Teeter (Meadowmont)", "category": "supermarket", "note": "Grocery anchoring Meadowmont Village in east Chapel Hill.", "address": "116 W Barbee Chapel Rd, Chapel Hill, NC 27517", "lat": 35.90649, "lng": -79.01092, "approx": false },
+    { "name": "Harris Teeter (Chapel Hill North / Timberlyne)", "category": "supermarket", "note": "North-side grocery on MLK Jr Blvd near Timberlyne.", "address": "1800 Martin Luther King Jr Blvd, Chapel Hill, NC 27514", "lat": 35.96838, "lng": -79.05862, "approx": false },
+    { "name": "Trader Joe's", "category": "supermarket", "note": "Popular budget grocery in the Eastgate / Blue Hill district NE of campus.", "address": "1800 E Franklin St, Chapel Hill, NC 27514", "lat": 35.93668, "lng": -79.02440, "approx": false },
+    { "name": "Whole Foods Market", "category": "supermarket", "note": "Natural / organic grocery off Elliott Rd near Eastgate.", "address": "81 S Elliott Rd, Chapel Hill, NC 27514", "lat": 35.93464, "lng": -79.02805, "approx": false },
+    { "name": "Aldi (E Franklin)", "category": "supermarket", "note": "Discount grocery in the Eastgate / Blue Hill district.", "address": "1800 E Franklin St, Chapel Hill, NC 27514", "lat": 35.93529, "lng": -79.02594, "approx": false },
+    { "name": "Weaver Street Market (Carrboro)", "category": "supermarket", "note": "Beloved co-op grocery with lawn; heart of downtown Carrboro.", "address": "101 E Weaver St, Carrboro, NC 27510", "lat": 35.91115, "lng": -79.07136, "approx": false },
+    { "name": "Weaver Street Market (Southern Village)", "category": "supermarket", "note": "Co-op grocery anchoring Southern Village south of campus.", "address": "716 Market St, Chapel Hill, NC 27516", "lat": 35.88013, "lng": -79.06602, "approx": false },
+    { "name": "Food Lion (Fordham Blvd)", "category": "supermarket", "note": "Value grocery near Eastgate, close to campus.", "address": "1720 Fordham Blvd, Chapel Hill, NC 27514", "lat": 35.93690, "lng": -79.02213, "approx": false },
+    { "name": "Food Lion (Carrboro / Jones Ferry)", "category": "supermarket", "note": "Value grocery serving west Carrboro.", "address": "602 Jones Ferry Rd, Carrboro, NC 27510", "lat": 35.90707, "lng": -79.08886, "approx": false },
+    { "name": "Walmart Supercenter", "category": "supermarket", "note": "Full grocery + general merchandise south on US 15-501.", "address": "12500 US-15/501 N, Chapel Hill, NC 27517", "lat": 35.85866, "lng": -79.08155, "approx": false },
+
+    { "name": "Franklin Street (dining district)", "category": "dining", "note": "Main downtown drag bordering campus; bars, coffee, and dozens of restaurants.", "address": "E Franklin St at Columbia St, Chapel Hill, NC 27514", "lat": 35.91402, "lng": -79.05352, "approx": false },
+    { "name": "Carrboro (E Main St dining district)", "category": "dining", "note": "Eclectic downtown Carrboro restaurants, bars, and Cat's Cradle music venue.", "address": "E Main St, Carrboro, NC 27510", "lat": 35.91048, "lng": -79.06748, "approx": true },
+    { "name": "Southern Village (dining)", "category": "dining", "note": "Walkable village square with restaurants, cinema, and Weaver Street.", "address": "Market St, Chapel Hill, NC 27516", "lat": 35.88131, "lng": -79.06609, "approx": true },
+    { "name": "Meadowmont Village (dining)", "category": "dining", "note": "Mixed-use village with restaurants and shops east of campus.", "address": "Meadowmont Village Cir, Chapel Hill, NC 27517", "lat": 35.90465, "lng": -79.01160, "approx": true },
+    { "name": "Sutton's Drug Store", "category": "dining", "note": "Iconic 1923 Franklin St lunch counter; burgers and Tar Heel photo wall.", "address": "159 E Franklin St, Chapel Hill, NC 27514", "lat": 35.91406, "lng": -79.05386, "approx": false },
+    { "name": "Top of the Hill (TOPO)", "category": "dining", "note": "Franklin St rooftop restaurant & brewery overlooking campus.", "address": "100 E Franklin St, Chapel Hill, NC 27514", "lat": 35.91302, "lng": -79.05543, "approx": false },
+    { "name": "Al's Burger Shack", "category": "dining", "note": "Award-winning student-favorite burgers on W Franklin St.", "address": "516 W Franklin St, Chapel Hill, NC 27516", "lat": 35.91011, "lng": -79.06407, "approx": false },
+    { "name": "Mediterranean Deli", "category": "dining", "note": "Popular Mediterranean buffet / deli on W Franklin St.", "address": "410 W Franklin St, Chapel Hill, NC 27516", "lat": 35.91132, "lng": -79.06098, "approx": false },
+
+    { "name": "University Place", "category": "shopping", "note": "Former University Mall; mixed retail / dining off S Estes Dr.", "address": "201 S Estes Dr, Chapel Hill, NC 27514", "lat": 35.92786, "lng": -79.02716, "approx": false },
+    { "name": "Eastgate Crossing", "category": "shopping", "note": "Shopping center (Trader Joe's-adjacent) at E Franklin / Fordham.", "address": "1800 E Franklin St, Chapel Hill, NC 27514", "lat": 35.93640, "lng": -79.02392, "approx": false },
+    { "name": "Carr Mill Mall", "category": "shopping", "note": "Historic mill converted to local shops / dining in downtown Carrboro.", "address": "200 N Greensboro St, Carrboro, NC 27510", "lat": 35.91214, "lng": -79.07123, "approx": false },
+    { "name": "Target (Carolina Square / Franklin St)", "category": "shopping", "note": "Small-format Target on Franklin St; closest general store + grocery to campus.", "address": "143 W Franklin St, Chapel Hill, NC 27516", "lat": 35.91199, "lng": -79.05824, "approx": false },
+    { "name": "The Streets at Southpoint", "category": "shopping", "note": "Large regional mall in south Durham (~20 min) for major shopping.", "address": "6910 Fayetteville Rd, Durham, NC 27713", "lat": 35.90419, "lng": -78.94371, "approx": false },
+
+    { "name": "Coker Arboretum", "category": "park", "note": "5-acre garden on campus by Morehead Planetarium; arbor walk.", "address": "399 E Cameron Ave, Chapel Hill, NC 27514", "lat": 35.91375, "lng": -79.04905, "approx": false },
+    { "name": "North Carolina Botanical Garden", "category": "park", "note": "Native-plant display gardens and trails at Old Mason Farm Rd & US 15-501.", "address": "100 Old Mason Farm Rd, Chapel Hill, NC 27517", "lat": 35.89733, "lng": -79.03111, "approx": false },
+    { "name": "Battle Park", "category": "park", "note": "93-acre old-growth forest with trails on campus edge; home to Forest Theatre.", "address": "Country Club Rd & S Boundary St, Chapel Hill, NC 27514", "lat": 35.91334, "lng": -79.04369, "approx": false },
+    { "name": "Bolin Creek Trail (Community Center access)", "category": "park", "note": "Paved greenway along Bolin Creek; main access at Chapel Hill Community Center.", "address": "120 S Estes Dr, Chapel Hill, NC 27514", "lat": 35.92578, "lng": -79.03272, "approx": false },
+    { "name": "Carolina North Forest", "category": "park", "note": "750+ acre university forest with mountain-bike and hiking trails north of campus.", "address": "Off Estes Dr Ext / Municipal Dr, Chapel Hill, NC 27514", "lat": 35.94072, "lng": -79.06653, "approx": true },
+    { "name": "Umstead Park (Chapel Hill town park)", "category": "park", "note": "Town park with playground, picnic shelters, and Bolin Creek access.", "address": "399 Umstead Dr, Chapel Hill, NC 27516", "lat": 35.91991, "lng": -79.06337, "approx": false },
+    { "name": "Southern Community Park", "category": "park", "note": "Town park with trails, dog area, and sports courts south of campus.", "address": "1000 Dogwood Acres Dr, Chapel Hill, NC 27516", "lat": 35.87216, "lng": -79.06896, "approx": false },
+    { "name": "Cedar Falls Park", "category": "park", "note": "North-side town park with tennis, trails, and ball fields.", "address": "500 Weaver Dairy Rd, Chapel Hill, NC 27514", "lat": 35.95737, "lng": -79.03318, "approx": false },
+    { "name": "Hargraves Community Center & Park", "category": "park", "note": "Historic Northside park / rec center with pool and fields near downtown.", "address": "216 N Roberson St, Chapel Hill, NC 27516", "lat": 35.91288, "lng": -79.06383, "approx": false },
+    { "name": "Wilson Park", "category": "park", "note": "Carrboro park with creek, playground, and Bolin Creek Greenway trailhead.", "address": "101 Wilson Park Ln, Carrboro, NC 27510", "lat": 35.91973, "lng": -79.07570, "approx": false },
+
+    { "name": "Morehead Planetarium and Science Center", "category": "attraction", "note": "Historic planetarium / science center on Franklin St edge of campus.", "address": "250 E Franklin St, Chapel Hill, NC 27514", "lat": 35.91392, "lng": -79.05042, "approx": false },
+    { "name": "Ackland Art Museum", "category": "attraction", "note": "UNC's art museum with a wide-ranging collection; free admission.", "address": "101 S Columbia St, Chapel Hill, NC 27514", "lat": 35.91257, "lng": -79.05489, "approx": false },
+    { "name": "Old Well", "category": "attraction", "note": "UNC's most iconic landmark; neoclassical rotunda in McCorkle Place.", "address": "E Cameron Ave, Chapel Hill, NC 27514", "lat": 35.91206, "lng": -79.05123, "approx": false },
+    { "name": "Kenan Memorial Stadium", "category": "attraction", "note": "UNC football stadium tucked into a wooded bowl on campus.", "address": "104 Stadium Dr, Chapel Hill, NC 27514", "lat": 35.90694, "lng": -79.04782, "approx": false },
+    { "name": "Dean E. Smith Center", "category": "attraction", "note": "21,000-seat arena ('the Dean Dome') home to UNC basketball.", "address": "300 Skipper Bowles Dr, Chapel Hill, NC 27514", "lat": 35.89948, "lng": -79.04381, "approx": false },
+    { "name": "Carolina Basketball Museum", "category": "attraction", "note": "Free museum of Tar Heel basketball history next to the Smith Center.", "address": "450 Skipper Bowles Dr, Chapel Hill, NC 27514", "lat": 35.89970, "lng": -79.04450, "approx": true },
+    { "name": "Forest Theatre", "category": "attraction", "note": "Historic stone outdoor amphitheater at the edge of Battle Park.", "address": "300 S Boundary St, Chapel Hill, NC 27514", "lat": 35.91339, "lng": -79.04487, "approx": false }
+  ]
+}

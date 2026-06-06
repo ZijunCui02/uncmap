@@ -1,0 +1,9 @@
+# local tooling / editor / OS
+.claude/
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+node_modules/
+.venv/
+__pycache__/
